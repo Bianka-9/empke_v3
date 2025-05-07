@@ -6,8 +6,12 @@ const nameInput = document.querySelector('#name')
 const cityInput = document.querySelector('#city')
 const salaryInput = document.querySelector('#salary')
 
+const empModalLabel = document.querySelector('#empModalLabel');
+
 
 const url = 'http://localhost:8000/api/employees'
+
+var addMode = true;
 
 
 
@@ -39,11 +43,13 @@ function renderTbody(empList) {
       </td>
       <td>
         <button class="btn btn-secondary"
-        onclick="updateEmployee()"
+        onclick="editEmployee()"
         data-id="${emp.id}"
         data-name="${emp.name}"
         data-city="${emp.city}"
         data-salary="${emp.salary}"
+        data-bs-toggle="modal" 
+        data-bs-target="#empModal"
         >Szerkesztés</button>
       </td>
 
@@ -109,8 +115,10 @@ function deleteEmployee(id){
   
 }
 
-function updateEmployee() {
+function editEmployee() {
+  addMode = false;
  
+  empModalLabel.innerHTML = 'Szerkesztés'
   const emp = {
     id: this.event.target.getAttribute('data-id'),
     name: this.event.target.getAttribute('data-name'),
