@@ -249,3 +249,10 @@
 [0mOPTIONS /api/employees [32m204[0m 0.184 ms - 0[0m
 [0mPOST /api/employees [32m201[0m 71.235 ms - 152[0m
 [0mGET /api/employees [32m200[0m 7.061 ms - 282[0m
+[0mGET /api/employees [32m200[0m 10.308 ms - 26[0m
+[0mOPTIONS /api/employees [32m204[0m 0.567 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 31.287 ms - 157[0m
+[0mGET /api/employees [32m200[0m 2.685 ms - 157[0m
+[0mOPTIONS /api/employees [32m204[0m 0.214 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 13.236 ms - 156[0m
+[0mGET /api/employees [32m200[0m 2.350 ms - 288[0m
