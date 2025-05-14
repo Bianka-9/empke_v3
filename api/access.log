@@ -440,3 +440,4 @@
 [0mOPTIONS /api/employees/12 [32m204[0m 0.199 ms - 0[0m
 [0mPUT /api/employees/12 [32m200[0m 19.506 ms - 159[0m
 [0mGET /api/employees [32m200[0m 2.804 ms - 930[0m
+[0mGET /api/employees [36m304[0m 14.511 ms - -[0m
