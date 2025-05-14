@@ -1,3 +1,4 @@
+const cards = document.querySelector('#cards')
 const tbody = document.querySelector('#tbody')
 const saveButton = document.querySelector('#saveButton')
 const addButton = document.querySelector('#addButton')
@@ -59,12 +60,15 @@ function renderTbody(empList) {
   var tbodyContent = '';
   empList.forEach((emp) => {
     var row = `
-    <tr class="miniRow">
-      <td class="mini miniId">${emp.id}</td>      
-      <td class="mini miniName">${emp.name}</td>      
-      <td class="mini miniCity">${emp.city}</td>      
-      <td class="mini miniSalary">${emp.salary}</td>
-      <td class="mini buttons">
+<div class="card m-3" style="width: 280px;">
+  <div class="card-header">
+    <h2>${emp.name}</h2>
+  </div>
+  <img src="/profpic.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Település: ${emp.city}</h5>
+    <p class="card-text">Fizetés: ${emp.salary}</p>
+
         <button class="btn btn-danger me-3" 
         onclick="deleteEmployee(${emp.id})">Törlés</button>
       
@@ -77,15 +81,13 @@ function renderTbody(empList) {
         data-bs-toggle="modal" 
         data-bs-target="#empModal"
         >Szerkesztés</button>
-      </td>
-
-      
-
-    </tr>
+  </div>
+</div>
+    
     `;    
     tbodyContent += row;
   })
-  tbody.innerHTML = tbodyContent
+  cards.innerHTML = tbodyContent
 
 }
 function clearFields() {

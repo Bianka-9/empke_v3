@@ -1,33 +1,8 @@
-@media screen and (max-width: 500px) {
-    
-     td {
-        display: block;
-    }
-    th{
-        display: none;
-    }
 
-    .miniId::before {content: "id: "; }
-    .miniName::before {content: "Név: "; }
-    .miniCity::before {content: "Város: "; }
-    .miniSalary::before {content: "Fizetés: "; }
-    .mini::before{
-        font-weight: bold;
-        display: inline-block;
-        width: 100px;
+    #cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .miniRow{
-        display: block;
-        margin-bottom: 20px;
-        border: 2px solid black;
-    }
-
-    .buttons{
-        /* display: inline-block; */
-        
-    }
-    
-}
 
 
