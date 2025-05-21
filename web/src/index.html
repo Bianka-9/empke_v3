@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sip</title>
+  <title>Dolgozók</title>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,7 +31,7 @@
             <label for="id"
             class="form-label">Id</label>
             <input type="text" id="id"
-            class="form-control" readonly>
+            class="form-control" readonly disabled>
           </div>
           <div class="input">
             <label for="name"
@@ -83,6 +83,25 @@
       </tbody>
     </table>
 
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Dolgozó törlése</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Biztosan törölni szeretné a dolgozót?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
+        <button type="button" class="btn btn-danger" onclick="deleteEmployee()" data-bs-dismiss="modal">Törlés</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   </div>

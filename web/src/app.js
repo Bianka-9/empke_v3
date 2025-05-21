@@ -6,11 +6,13 @@ const idInput = document.querySelector('#id')
 const nameInput = document.querySelector('#name')
 const cityInput = document.querySelector('#city')
 const salaryInput = document.querySelector('#salary')
+const deleteModal = document.querySelector('#deleteModal')
 
 const empModalLabel = document.querySelector('#empModalLabel');
 
 
 const url = 'http://localhost:8000/api/employees'
+var idForDelete = -1;
 
 var addMode = true;
 
@@ -66,7 +68,7 @@ function renderTbody(empList) {
       <td class="mini miniSalary">${emp.salary}</td>
       <td class="mini buttons">
         <button class="btn btn-danger me-3" 
-        onclick="deleteEmployee(${emp.id})">Törlés</button>
+        onclick="askDeleteEmployee(${emp.id})">Törlés</button>
       
         <button class="btn btn-secondary"
         onclick="editEmployee()"
@@ -111,15 +113,32 @@ function addEmployee(emp) {
   .catch(err => console.log(err))
 }
 
-function deleteEmployee(id){
-  const delUrl = url + "/" + id;
+function askDeleteEmployee(id){
+
+  const modal = new bootstrap.Modal(
+    deleteModal
+  );
+    modal.show();
+    console.log(id)
+    idForDelete = id;
+
+}
+
+function deleteEmployee(){
+  console.log(idForDelete)
+  const delUrl = url + "/" + idForDelete;
 
   fetch(delUrl, { method: "delete" })
   .then(response => response.json() )
   .then(result => {
     console.log(result)
     getEmployees()
+    const modal = new bootstrap.Modal(
+    deleteModal
+  );
+  modal.hide();
   });
+
 }
 
 function editEmployee() {
