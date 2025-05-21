@@ -539,3 +539,4 @@
 [0mGET /api/employees [36m304[0m 3.287 ms - -[0m
 [0mGET /api/employees [36m304[0m 2.303 ms - -[0m
 [0mGET /api/employees [36m304[0m 3.510 ms - -[0m
+[0mGET /api/employees [32m200[0m 12.720 ms - 930[0m
